@@ -36,14 +36,17 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 # Find all source files (Glob for .cpp and .cppm)
-file(GLOB_RECURSE SRC_FILES src/*.cpp)
+file(GLOB_RECURSE SRC_FILES src/*.cpp src/*.cppm)
+file(GLOB_RECURSE IMGUI imgui/*.cpp)
 
 # Compile executable
 add_executable(quill-art ${SRC_FILES})
-target_link_libraries(quill-art PRIVATE Vulkan::Vulkan)
+add_library(imgui STATIC ${IMGUI})
+target_link_libraries(quill-art PRIVATE imgui Vulkan::Vulkan)
 
 # Include headers
 target_include_directories(quill-art PRIVATE lib/)
+target_include_directories(imgui PRIVATE lib/)
 
 # Set build flags
 target_compile_options(quill-art PRIVATE -Wall -Wextra -pedantic)
