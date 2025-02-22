@@ -1,0 +1,14 @@
+{
+  "name": "light",
+  "colors": {
+    "background": "#ffffff",
+    "foreground": "#333333",
+    "primary": "#007acc",
+    "secondary": "#f3f3f3",
+    "accent": "#569cd6"
+  },
+  "font": {
+    "family": "Roboto, sans-serif",
+    "size": "14px"
+  }
+}
