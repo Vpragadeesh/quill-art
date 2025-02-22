@@ -1,4 +1,4 @@
-#include"application.hpp"
+#include "application.hpp"
 
 void State::setup_vulkan(ImVector<const char *> instance_extensions) {
   VkResult err;
@@ -27,7 +27,7 @@ void State::setup_vulkan(ImVector<const char *> instance_extensions) {
           VK_KHR_GET_PHYSICAL_DEVICE_PROPERTIES_2_EXTENSION_NAME);
 #ifdef VK_KHR_PORTABILITY_ENUMERATION_EXTENSION_NAME
     if (is_extension_available(properties,
-                             VK_KHR_PORTABILITY_ENUMERATION_EXTENSION_NAME)) {
+                               VK_KHR_PORTABILITY_ENUMERATION_EXTENSION_NAME)) {
       instance_extensions.push_back(
           VK_KHR_PORTABILITY_ENUMERATION_EXTENSION_NAME);
       create_info.flags |= VK_INSTANCE_CREATE_ENUMERATE_PORTABILITY_BIT_KHR;
@@ -94,7 +94,7 @@ void State::setup_vulkan(ImVector<const char *> instance_extensions) {
                                          &properties_count, properties.Data);
 #ifdef VK_KHR_PORTABILITY_SUBSET_EXTENSION_NAME
     if (is_extension_available(properties,
-                             VK_KHR_PORTABILITY_SUBSET_EXTENSION_NAME))
+                               VK_KHR_PORTABILITY_SUBSET_EXTENSION_NAME))
       device_extensions.push_back(VK_KHR_PORTABILITY_SUBSET_EXTENSION_NAME);
 #endif
 
@@ -111,8 +111,7 @@ void State::setup_vulkan(ImVector<const char *> instance_extensions) {
     create_info.pQueueCreateInfos = queue_info;
     create_info.enabledExtensionCount = (uint32_t)device_extensions.Size;
     create_info.ppEnabledExtensionNames = device_extensions.Data;
-    err =
-        vkCreateDevice(physical_device, &create_info, allocator, &device);
+    err = vkCreateDevice(physical_device, &create_info, allocator, &device);
     check_vk_result(err);
     vkGetDeviceQueue(device, queue_family, 0, &queue);
   }
@@ -133,8 +132,8 @@ void State::setup_vulkan(ImVector<const char *> instance_extensions) {
       pool_info.maxSets += pool_size.descriptorCount;
     pool_info.poolSizeCount = (uint32_t)IM_ARRAYSIZE(pool_sizes);
     pool_info.pPoolSizes = pool_sizes;
-    err = vkCreateDescriptorPool(device, &pool_info, allocator,
-                                 &descriptor_pool);
+    err =
+        vkCreateDescriptorPool(device, &pool_info, allocator, &descriptor_pool);
     check_vk_result(err);
   }
 }
@@ -142,7 +141,7 @@ void State::setup_vulkan(ImVector<const char *> instance_extensions) {
 // All the ImGui_ImplVulkanH_XXX structures/functions are optional helpers used
 // by the demo. Your real engine/app may not use them.
 void State::setup_vulkan_window(ImGui_ImplVulkanH_Window *wd,
-                              VkSurfaceKHR surface, int width, int height) {
+                                VkSurfaceKHR surface, int width, int height) {
   wd->Surface = surface;
 
   // Check for WSI support
@@ -180,9 +179,9 @@ void State::setup_vulkan_window(ImGui_ImplVulkanH_Window *wd,
 
   // Create SwapChain, RenderPass, Framebuffer, etc.
   IM_ASSERT(min_image_count >= 2);
-  ImGui_ImplVulkanH_CreateOrResizeWindow(instance, physical_device, device,
-                                         wd, queue_family, allocator, width,
-                                         height, min_image_count);
+  ImGui_ImplVulkanH_CreateOrResizeWindow(instance, physical_device, device, wd,
+                                         queue_family, allocator, width, height,
+                                         min_image_count);
 }
 
 void State::cleanup_vulkan() {
@@ -300,22 +299,20 @@ void State::present_frame(ImGui_ImplVulkanH_Window *wd) {
       wd->SemaphoreCount; // Now we can use the next set of semaphores
 }
 
-
-
 void check_vk_result(VkResult err) {
   if (err == VK_SUCCESS)
-  return;
+    return;
   if (err < 0) {
-  std::stringstream ss;
-  ss << "[vulkan] Error: VkResult = " << err << std::endl;
-  std::cerr << ss.str();
-}}
-
+    std::stringstream ss;
+    ss << "[vulkan] Error: VkResult = " << err << std::endl;
+    std::cerr << ss.str();
+  }
+}
 
 bool is_extension_available(const ImVector<VkExtensionProperties> &properties,
-  const char* extension) {
-for (const VkExtensionProperties &p : properties)
-if (strcmp(p.extensionName, extension) == 0)
-return true;
-return false;
+                            const char *extension) {
+  for (const VkExtensionProperties &p : properties)
+    if (strcmp(p.extensionName, extension) == 0)
+      return true;
+  return false;
 }

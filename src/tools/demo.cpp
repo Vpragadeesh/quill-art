@@ -1,7 +1,5 @@
-#include"demo.hpp"
+#include "demo.hpp"
 
-#include<iostream>
+#include <iostream>
 
-void demo() {
-    std::cout << "Hello, World!" << std::endl;
-}
+void demo() { std::cout << "Hello, World!" << std::endl; }
