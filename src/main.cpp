@@ -1,4 +1,4 @@
-#include<iostream>
+#include"tools/demo.cpp"
 int main() {
-    std::cout << "Hello, World!" << std::endl;
+    demo();
 }
