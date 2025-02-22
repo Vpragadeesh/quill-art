@@ -40,7 +40,7 @@ file(GLOB_RECURSE SRC_FILES src/*.cpp)
 add_executable(quill-art ${SRC_FILES})
 
 # Include headers
-target_include_directories(quill-art PRIVATE include/)
+target_include_directories(quill-art PRIVATE src/)
 
 # Set build flags
 target_compile_options(quill-art PRIVATE -Wall -Wextra -pedantic)
