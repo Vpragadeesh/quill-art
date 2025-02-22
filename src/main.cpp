@@ -1,22 +1,25 @@
-#include<iostream>
-#include<fstream>
-#include"svg/containers/canvas.hpp"
-#include"svg/shapes/circle.hpp"
-#include"svg/shapes/rect.hpp"
-#include"svg/shapes/line.hpp"
+#include <iostream>
+#include <fstream>
+#include "svg/canvas.hpp"
+#include "svg/shapes/circle.hpp"
+#include "svg/shapes/rect.hpp"
+#include "svg/shapes/line.hpp"
 
 
 int main() {
     Canvas canvas;
 
     // Add a circle
-    canvas.addShape(std::make_unique<Circle>(100, 100, 50));
-
+    std::string black = "black";
+    std::string transparent = "transparent";
+    canvas.addShape(std::make_unique<Circle>(100, 100, 50, black, transparent));
+    canvas.addShape(std::make_unique<Rect>(10, 10, 200, 100, black, transparent));
     // Add a rectangle
-    canvas.addShape(std::make_unique<Rect>(10, 10, 200, 100));
-
+    canvas.addShape(std::make_unique<Rect>(10, 10, 200, 100, black, transparent));
+    canvas.addShape(std::make_unique<Line>(0, 0, 200, 200, black));
     // Add a line
-    canvas.addShape(std::make_unique<Line>(0, 0, 200, 200));
+    std::string blackLine = "black";
+    canvas.addShape(std::make_unique<Line>(0, 0, 200, 200, blackLine));
 
     // Optionally add a path
     // canvas.addShape(std::make_unique<Path>("M10 10 H 80 V 80 H 10 Z"));
