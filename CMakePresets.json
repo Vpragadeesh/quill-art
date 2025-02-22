@@ -1,0 +1,50 @@
+{
+    "version": 3,
+    "cmakeMinimumRequired": {
+      "major": 3,
+      "minor": 21,
+      "patch": 0
+    },
+    "configurePresets": [
+      {
+        "name": "default",
+        "hidden": false,
+        "generator": "Ninja",
+        "binaryDir": "build",
+        "cacheVariables": {
+          "CMAKE_BUILD_TYPE": "Debug",
+          "CMAKE_C_COMPILER": "clang",
+          "CMAKE_CXX_COMPILER": "clang++"
+        }
+      },
+      {
+        "name": "release",
+        "inherits": "default",
+        "cacheVariables": {
+          "CMAKE_BUILD_TYPE": "Release"
+        }
+      },
+      {
+        "name": "linux",
+        "inherits": "default",
+        "cacheVariables": {
+          "TARGET_OS": "Linux"
+        }
+      },
+      {
+        "name": "windows",
+        "inherits": "default",
+        "cacheVariables": {
+          "TARGET_OS": "Windows"
+        }
+      },
+      {
+        "name": "macos",
+        "inherits": "default",
+        "cacheVariables": {
+          "TARGET_OS": "MacOS"
+        }
+      }
+    ]
+  }
+  
