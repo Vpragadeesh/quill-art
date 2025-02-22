@@ -1,4 +1,4 @@
-#include"app/application.hpp"
+#include "app/application.hpp"
 
 int main(int, char **) {
   State state;
@@ -13,8 +13,7 @@ int main(int, char **) {
   SDL_WindowFlags window_flags =
       (SDL_WindowFlags)(SDL_WINDOW_VULKAN | SDL_WINDOW_RESIZABLE |
                         SDL_WINDOW_HIGH_PIXEL_DENSITY | SDL_WINDOW_HIDDEN);
-  SDL_Window *window = SDL_CreateWindow("Dear ImGui SDL3+Vulkan example",
-  1280,
+  SDL_Window *window = SDL_CreateWindow("Dear ImGui SDL3+Vulkan example", 1280,
                                         720, window_flags);
   if (window == nullptr) {
     printf("Error: SDL_CreateWindow(): %s\n", SDL_GetError());
@@ -34,8 +33,8 @@ int main(int, char **) {
   // Create Window Surface
   VkSurfaceKHR surface;
   VkResult err;
-  if (SDL_Vulkan_CreateSurface(window, state.instance, state.allocator, &surface) ==
-      0) {
+  if (SDL_Vulkan_CreateSurface(window, state.instance, state.allocator,
+                               &surface) == 0) {
     printf("Failed to create Vulkan surface.\n");
     return 1;
   }
@@ -45,8 +44,8 @@ int main(int, char **) {
   SDL_GetWindowSize(window, &w, &h);
   ImGui_ImplVulkanH_Window *wd = &state.main_window_data;
   state.setup_vulkan_window(wd, surface, w, h);
-  SDL_SetWindowPosition(window, SDL_WINDOWPOS_CENTERED,
-  SDL_WINDOWPOS_CENTERED); SDL_ShowWindow(window);
+  SDL_SetWindowPosition(window, SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED);
+  SDL_ShowWindow(window);
 
   // Setup Dear ImGui context
   IMGUI_CHECKVERSION();
@@ -160,8 +159,9 @@ int main(int, char **) {
          state.main_window_data.Height != fb_height)) {
       ImGui_ImplVulkan_SetMinImageCount(state.min_image_count);
       ImGui_ImplVulkanH_CreateOrResizeWindow(
-          state.instance, state.physical_device, state.device, &state.main_window_data,
-          state.queue_family, state.allocator, fb_width, fb_height, state.min_image_count);
+          state.instance, state.physical_device, state.device,
+          &state.main_window_data, state.queue_family, state.allocator,
+          fb_width, fb_height, state.min_image_count);
       state.main_window_data.FrameIndex = 0;
       state.swapchain_rebuild = false;
     }
@@ -187,26 +187,25 @@ int main(int, char **) {
 
       ImGui::Begin("Hello, world!"); // Create a window called "Hello,
       // world!"
-                                     // and append into it.
+      // and append into it.
 
       ImGui::Text("This is some useful text."); // Display some text (you can
                                                 // use a format strings too)
-      ImGui::Checkbox(
-          "Demo Window",
-          &show_demo_window); // Edit bools storing our window open/close
-          // state
+      ImGui::Checkbox("Demo Window",
+                      &show_demo_window); // Edit bools storing our window
+                                          // open/close state
       ImGui::Checkbox("Another Window", &show_another_window);
 
       ImGui::SliderFloat("float", &f, 0.0f,
                          1.0f); // Edit 1 float using a slider from 0.0f
-                        //  to 1.0f
+                                //  to 1.0f
       ImGui::ColorEdit3(
           "clear color",
           (float *)&clear_color); // Edit 3 floats representing a color
 
       if (ImGui::Button("Button")) // Buttons return true when clicked (most
                                    // widgets return true when
-                                  //  edited/activated)
+                                   //  edited/activated)
         counter++;
       ImGui::SameLine();
       ImGui::Text("counter = %d", counter);
@@ -222,7 +221,7 @@ int main(int, char **) {
           "Another Window",
           &show_another_window); // Pass a pointer to our bool variable (the
                                  // window will have a closing button that
-                                //  will
+                                 //  will
                                  // clear the bool when clicked)
       ImGui::Text("Hello from another window!");
       if (ImGui::Button("Close Me"))
@@ -234,8 +233,7 @@ int main(int, char **) {
     ImGui::Render();
     ImDrawData *draw_data = ImGui::GetDrawData();
     const bool is_minimized =
-        (draw_data->DisplaySize.x <= 0.0f || draw_data->DisplaySize.y <=
-        0.0f);
+        (draw_data->DisplaySize.x <= 0.0f || draw_data->DisplaySize.y <= 0.0f);
     if (!is_minimized) {
       wd->ClearValue.color.float32[0] = clear_color.x * clear_color.w;
       wd->ClearValue.color.float32[1] = clear_color.y * clear_color.w;
