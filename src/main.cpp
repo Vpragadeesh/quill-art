@@ -1,9 +1,9 @@
-#include <iostream>
-#include <fstream>
-#include "../src/svg/containers/canvas.hpp"
-#include "../src/svg/shapes/circle.hpp"
-#include "../src/svg/shapes/rect.hpp"
-#include "../src/svg/shapes/line.hpp"
+#include<iostream>
+#include<fstream>
+#include"svg/containers/canvas.hpp"
+#include"svg/shapes/circle.hpp"
+#include"svg/shapes/rect.hpp"
+#include"svg/shapes/line.hpp"
 
 
 int main() {
