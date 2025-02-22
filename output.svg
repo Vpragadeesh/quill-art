@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="500" height="500">
-  <circle cx="100" cy="100" r="50" stroke="black" fill="transparent"/>
-  <rect x="10" y="10" width="200" height="100" stroke="black" fill="transparent"/>
-  <rect x="10" y="10" width="200" height="100" stroke="black" fill="transparent"/>
-  <line x1="0" y1="0" x2="200" y2="200" stroke="black"/>
-  <line x1="0" y1="0" x2="200" y2="200" stroke="black"/>
+  <circle cx="100" cy="100" r="50" stroke="white" fill="transparent"/>
+  <rect x="10" y="10" width="200" height="100" stroke="white" fill="transparent"/>
+  <rect x="10" y="10" width="200" height="100" stroke="white" fill="transparent"/>
+  <line x1="0" y1="0" x2="200" y2="200" stroke="white"/>
+  <line x1="0" y1="0" x2="200" y2="200" stroke="aqua"/>
 </svg>

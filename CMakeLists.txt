@@ -1,6 +1,5 @@
 cmake_minimum_required(VERSION 3.21)
 project(quill-art LANGUAGES CXX)
-find_package(Vulkan REQUIRED)
 
 # Enforce Ninja
 if(NOT CMAKE_GENERATOR STREQUAL "Ninja")
@@ -42,7 +41,10 @@ file(GLOB_RECURSE IMGUI imgui/*.cpp)
 # Compile executable
 add_executable(quill-art ${SRC_FILES})
 add_library(imgui STATIC ${IMGUI})
-target_link_libraries(quill-art PRIVATE imgui Vulkan::Vulkan)
+find_package(Vulkan REQUIRED)
+include_directories(${Vulkan_INCLUDE_DIRS})
+target_link_libraries(quill-art PRIVATE imgui ${Vulkan_LIBRARIES})
+# target_link_libraries(quill-art PRIVATE imgui Vulkan::Vulkan)
 
 # Include headers
 target_include_directories(quill-art PRIVATE lib/)

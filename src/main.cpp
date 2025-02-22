@@ -24,7 +24,7 @@ int main() {
   canvas.addShape(std::make_unique<Rect>(10, 10, 200, 100, black, transparent));
   canvas.addShape(std::make_unique<Line>(0, 0, 200, 200, black));
   // Add a line
-  std::string blackLine = "black";
+  std::string blackLine = "aqua";
   canvas.addShape(std::make_unique<Line>(0, 0, 200, 200, blackLine));
 
   // Optionally add a path
