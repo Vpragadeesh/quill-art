@@ -4,7 +4,8 @@
 // #include<imgui.h>
 // // #include<GLFW/glfw3.h>
 
-// // MainWindow encapsulates the main UI (dockspace, menubar, toolbar) inspired by
+// // MainWindow encapsulates the main UI (dockspace, menubar, toolbar) inspired
+// by
 // // zide.
 // class MainWindow {
 // public:
