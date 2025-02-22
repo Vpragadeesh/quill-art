@@ -1,0 +1,7 @@
+{
+    "clangd.arguments": [
+        "--std=c++20",
+        "--background-index",
+        "--compile-commands-dir=${workspaceFolder}"
+    ]
+}
