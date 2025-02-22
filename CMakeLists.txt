@@ -42,9 +42,9 @@ file(GLOB_RECURSE IMGUI imgui/*.cpp)
 add_executable(quill-art ${SRC_FILES})
 add_library(imgui STATIC ${IMGUI})
 find_package(Vulkan REQUIRED)
+find_package(SDL3 REQUIRED CONFIG REQUIRED COMPONENTS SDL3-shared)
 include_directories(${Vulkan_INCLUDE_DIRS})
-target_link_libraries(quill-art PRIVATE imgui ${Vulkan_LIBRARIES})
-# target_link_libraries(quill-art PRIVATE imgui Vulkan::Vulkan)
+target_link_libraries(quill-art PRIVATE imgui ${Vulkan_LIBRARIES} SDL3::SDL3)
 
 # Include headers
 target_include_directories(quill-art PRIVATE lib/)
