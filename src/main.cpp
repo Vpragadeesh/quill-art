@@ -1,4 +1,4 @@
-#include"tools/demo.cpp"
+#include"tools/demo.hpp"
 int main() {
     demo();
 }
