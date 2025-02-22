@@ -1,5 +1,4 @@
-#ifndef APPLICATION_H
-#define APPLICATION_H
+#pragma once
 
 class Application {
 public:
@@ -12,5 +11,3 @@ public:
 private:
     bool isRunning = true;
 };
-
-#endif 
