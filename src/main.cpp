@@ -5,6 +5,7 @@
 #include "../src/svg/shapes/rect.hpp"
 #include "../src/svg/shapes/line.hpp"
 
+
 int main() {
     Canvas canvas;
 
