@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.21)
-project(QuillArt LANGUAGES CXX)
+project(quill-art LANGUAGES CXX)
 
 # Enforce Ninja
 if(NOT CMAKE_GENERATOR STREQUAL "Ninja")
@@ -29,18 +29,18 @@ set(CMAKE_C_COMPILER clang)
 set(CMAKE_CXX_COMPILER clang++)
 
 # Enable C++20 Modules
-set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
 # Find all source files (Glob for .cpp and .cppm)
-file(GLOB_RECURSE SRC_FILES src/*.cpp src/*.cppm)
+file(GLOB_RECURSE SRC_FILES src/*.cpp)
 
 # Compile executable
-add_executable(QuillArt ${SRC_FILES})
+add_executable(quill-art ${SRC_FILES})
 
 # Include headers
-# target_include_directories(QuillArt PRIVATE include/)
+# target_include_directories(quill-art PRIVATE include/)
 
 # Set build flags
-target_compile_options(QuillArt PRIVATE -Wall -Wextra -pedantic)
+target_compile_options(quill-art PRIVATE -Wall -Wextra -pedantic)
