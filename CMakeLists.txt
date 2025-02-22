@@ -1,5 +1,6 @@
 cmake_minimum_required(VERSION 3.21)
 project(quill-art LANGUAGES CXX)
+find_package(Vulkan REQUIRED)
 
 # Enforce Ninja
 if(NOT CMAKE_GENERATOR STREQUAL "Ninja")
@@ -38,6 +39,7 @@ file(GLOB_RECURSE SRC_FILES src/*.cpp)
 
 # Compile executable
 add_executable(quill-art ${SRC_FILES})
+target_link_libraries(quill-art PRIVATE Vulkan::Vulkan)
 
 # Include headers
 target_include_directories(quill-art PRIVATE lib/)

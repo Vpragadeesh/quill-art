@@ -5,8 +5,14 @@
 #include "svg/shapes/rect.hpp"
 #include "svg/shapes/line.hpp"
 
+#include<imgui.h>
+#include<imgui_impl_sdl3.h>
+#include<imgui_impl_vulkan.h>
+#include<SDL3/SDL.h>
+#include<SDL3/SDL_vulkan.h>
 
 int main() {
+
     Canvas canvas;
 
     // Add a circle
