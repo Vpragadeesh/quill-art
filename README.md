@@ -31,6 +31,10 @@ Make sure you have the following installed on your system:
 4. Apply colors and effects – Fill shapes, adjust gradients, and enhance your design.
 5. Manage layers and objects – Organize your artwork efficiently with layering support.
 6. Export your artwork – Save your design in SVG or other supported formats.
+### SVG Output:
+![My SVG Logo](https://github.com/sanvelu82/quill-art/blob/main/output.svg)
+
+The SVG image represents a well-structured vector artwork, showcasing clean lines, smooth curves, and precisely defined shapes. It may include various design elements such as geometric patterns, gradients, or artistic effects. The scalable nature of SVG ensures that the image retains its quality at any resolution, making it ideal for digital and print applications.
 
 # Acknowledgements
 https://github.com/KaganCanSit/Cross-Compatible-FileLock-Windows-and-Linux
