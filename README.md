@@ -54,7 +54,21 @@ If you're unsure which version to install, please refer to your platform's insta
 3. Draw and Edit: Use QuillArt's powerful drawing tools to create vector shapes, paths, and designs. Edit paths, manipulate anchor points, and use layers for better organization. 🖍️
 4. Apply Colors and Effects: Choose colors, gradients, and effects to bring your design to life. Fill shapes, apply strokes, and add advanced visual effects. 🌈
 5. Manage Layers and Objects: Organize your design with multiple layers. Keep elements separate for easy editing and refinement. 🗂️
-6. Export Your Artwork: When you're happy with your design, export it in SVG or other supported formats for digital or print use. 💾
+6. Export Your Artwork: When you're happy with your design, export it in SVG or other supported formats for digital or print use. 💾*
+
+# Contributing to QuillArt 🤝
+
+We welcome contributions to QuillArt! If you'd like to help improve the project, please follow the steps below:
+
+## Steps to Contribute
+
+1. **Fork the Repository** 🍴  
+   Click the "Fork" button at the top right of the repository page to create a copy of the repository on your GitHub account.
+
+2. **Create a New Branch** 🌱  
+   Create a new branch for your feature or bug fix:
+   ```bash
+   git checkout -b your-branch-name
 
 ### SVG Output:
 ![My SVG Logo](https://github.com/sanvelu82/quill-art/blob/main/output.svg)
@@ -72,17 +86,5 @@ This project is licensed under the MIT License. You are free to use, modify, and
 
 
 
-# Contributing to QuillArt 🤝
 
-We welcome contributions to QuillArt! If you'd like to help improve the project, please follow the steps below:
-
-## Steps to Contribute
-
-1. **Fork the Repository** 🍴  
-   Click the "Fork" button at the top right of the repository page to create a copy of the repository on your GitHub account.
-
-2. **Create a New Branch** 🌱  
-   Create a new branch for your feature or bug fix:
-   ```bash
-   git checkout -b your-branch-name
 
