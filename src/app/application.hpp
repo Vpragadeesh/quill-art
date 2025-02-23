@@ -5,8 +5,6 @@
 #include <imgui.h>
 #include <imgui_impl_sdl3.h>
 #include <imgui_impl_vulkan.h>
-#include <iostream>
-#include <sstream>
 
 // Volk headers
 #ifdef IMGUI_IMPL_VULKAN_USE_VOLK
